@@ -2,18 +2,24 @@
 
 version: '3.9'
 services:
-  masternode:
-    image: spark-base:v1
+  master-node:
+    image: hadooptest
     build: .
-    hostname: masternode
+    hostname: master-node
     ports:
       - "7077:7077" # Spark master
       - "8080:8080" # Master web GUI
       - "9000:9000" # Hadoop NameNode
       - "9870:9870" # HDFS datanode web GUI
-    command: hdfs namenode -format && hdfs --daemon start namenode && hdfs --daemon start datanode && sleep 999999d
+    command: bash -c "./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && jps && sleep 99999d"
+    # ./hadoop-3.3.4/bin/hdfs namenode -format && 
     networks:
       - spark-network
+    volumes:
+      - hdfs-data:/hdfs-volume
 
 networks:
   spark-network: {}
+
+volumes:
+  hdfs-data:

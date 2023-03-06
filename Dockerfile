@@ -19,7 +19,7 @@ RUN rm hadoop-3.3.4.tar.gz
 COPY hadoop-configs/core-site.xml /hadoop-3.3.4/etc/hadoop/
 COPY hadoop-configs/hdfs-site.xml /hadoop-3.3.4/etc/hadoop/
 
-# RUN ./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && bash
+CMD ./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && bash
 
 
 # RUN ${INSTALL} openjdk-8-jre-headless

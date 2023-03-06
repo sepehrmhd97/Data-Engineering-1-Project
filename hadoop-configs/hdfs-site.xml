@@ -2,5 +2,16 @@
     <property>
         <name>dfs.replication</name>
         <value>2</value>
+        <description>Number of replication</description>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///hdfs-volume/datanode</value>
+        <description>To persist HDFS</description>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///hdfs-volume/namenode</value>
+        <description>To persist namenode metadata (?)</description>
     </property>
 </configuration>
