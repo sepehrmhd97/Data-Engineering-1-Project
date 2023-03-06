@@ -7,4 +7,4 @@ tools that have been introduced in the course. By studying a new (for you) scien
 through the processes of understanding the problem, the data, and to develop a scalable data processing
 backend.
 
-`sudo install ggg`
+
