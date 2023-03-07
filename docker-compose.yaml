@@ -5,21 +5,24 @@ services:
   master-node:
     image: hadooptest
     build: .
-    hostname: master-node
+    hostname: master-node # docker run
     ports:
-      - "7077:7077" # Spark master
-      - "8080:8080" # Master web GUI
-      - "9000:9000" # Hadoop NameNode
-      - "9870:9870" # HDFS datanode web GUI
-    command: bash -c "./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && jps && sleep 99999d"
-    # ./hadoop-3.3.4/bin/hdfs namenode -format && 
+      - "7077:7077"
+      - "8080:8080"
+      - "9000:9000"
+      - "9870:9870"
+      - "4040-4050:4040-4050"
+    # README: Use this if starting NameNode for the first time
+    # command: bash -c "./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && jps && sleep 99999d"
+    # README: Use this if HDFS is present
+    command: bash -c "./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && jps && sleep 99999d"
     networks:
-      - spark-network
+      - spark-network # docker network create + docker run
     volumes:
-      - hdfs-data:/hdfs-volume
+      - hdfs-data:/hdfs-volume # docker run
 
 networks:
   spark-network: {}
 
 volumes:
-  hdfs-data:
+  hdfs-data: # docker run

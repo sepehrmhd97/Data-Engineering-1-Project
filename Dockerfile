@@ -31,3 +31,15 @@ COPY hadoop-configs/hdfs-site.xml /hadoop-3.3.4/etc/hadoop/
 # RUN tar -xvf spark-3.3.2-bin-hadoop3.tgz
 # RUN rm -rf spark-3.3.2-bin-hadoop3.tgz
 # RUN mv spark-3.3.2-bin-hadoop3/ /usr/local/spark
+
+# 7077 Spark Master
+# 8080 Spark Master Web GUI
+# 9000 Hadoop NameNode
+# 9870 HDFS DataNode Web GUI
+# 4040 Spark Job Web GUI (?)
+
+EXPOSE 7077
+EXPOSE 8080
+EXPOSE 9000
+EXPOSE 9870
+EXPOSE 4040-4050
