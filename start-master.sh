@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -x
 
 img="hadooptest"
 net="spark-network"
@@ -15,7 +14,6 @@ run="run $ports $network $volume $hostname $name $img"
 
 format_namenode="yes y | hdfs namenode -format"
 start_namenode="hdfs --daemon start namenode"
-start_datanode="hdfs --daemon start datanode"
 jps="jps"
 sleep="sleep 999999d"
 command="$start_namenode && $jps && $sleep"
