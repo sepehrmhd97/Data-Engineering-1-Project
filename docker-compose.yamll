@@ -14,16 +14,17 @@ services:
       - "4040-4050:4040-4050"
     # README: Use this if starting NameNode for the first time
     command: bash -c "./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && jps && sleep 999999d"
+    # && ./hadoop-3.3.4/bin/hdfs --daemon start datanode 
     # README: Use this if HDFS is present
     # command: bash -c "./hadoop-3.3.4/bin/hdfs --daemon start namenode && jps && sleep 999999d"
     # command: bash -c "./hadoop-3.3.4/bin/hdfs namenode -format && ./hadoop-3.3.4/bin/hdfs --daemon start namenode && ./hadoop-3.3.4/bin/hdfs --daemon start datanode && $$SPARK_HOME/sbin/start-master.sh && $$SPARK_HOME/sbin/start-worker.sh spark://master-node:7077"
     networks:
       - spark-network # docker network create + docker run
-    # volumes:
-    #   - hdfs-data:/hdfs-volume # docker run
+    volumes:
+      - hdfs-volume:/hdfs-data # docker run
 
 networks:
   spark-network: {}
 
-# volumes:
-#   hdfs-data: # docker run
+volumes:
+  hdfs-volume: # docker run
