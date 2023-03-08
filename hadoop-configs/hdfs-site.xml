@@ -6,12 +6,12 @@
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>file:///hdfs-volume/datanode</value>
+        <value>file:///hdfs-data/datanode</value>
         <description>To persist HDFS</description>
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>file:///hdfs-volume/namenode</value>
+        <value>file:///hdfs-data/namenode</value>
         <description>To persist namenode metadata (?)</description>
     </property>
 </configuration>
