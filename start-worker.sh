@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 has_host=false
 while getopts "h:" opt; do
@@ -36,7 +35,7 @@ edithost="echo $master_address master-node >> /etc/hosts"
 start_datanode="hdfs --daemon start datanode"
 jps="jps"
 sleep="sleep 999999d"
-command="$start_datanode && $jps && $sleep"
+command="$edithost && $start_datanode && $jps && $sleep"
 
 echo ">>> docker network create $net"
 docker network create $net
