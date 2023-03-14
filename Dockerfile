@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:22.04 AS hadoop-builder
 
 ENV HADOOP_HOME="/hadoop-3.3.4"
 ENV SPARK_HOME="/usr/local/spark"
@@ -17,12 +17,15 @@ RUN apt-get install -y net-tools
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y wget
 RUN apt-get install -y openjdk-11-jdk-headless
+RUN apt-get install -y openssh-client
 RUN wget -q https://dlcdn.apache.org/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz
 RUN tar -xvf hadoop-3.3.4.tar.gz
 RUN rm hadoop-3.3.4.tar.gz
+
 COPY hadoop-configs/core-site.xml /hadoop-3.3.4/etc/hadoop/
 COPY hadoop-configs/hdfs-site.xml /hadoop-3.3.4/etc/hadoop/
 COPY hadoop-configs/workers /hadoop-3.3.4/etc/hadoop/
+COPY hadoop-configs/hadoop-env.sh /hadoop-3.3.4/etc/hadoop/
 
 EXPOSE 7077
 EXPOSE 8080
