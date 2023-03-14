@@ -32,7 +32,6 @@ start_datanode="hdfs --daemon start datanode"
 jps="jps"
 sleep="sleep 999999d"
 command="$start_datanode && $jps && $sleep"
-command="$sleep"
 
 echo -e ">>> docker $run sh -c \"$command\""
 docker $run sh -c "$command"
