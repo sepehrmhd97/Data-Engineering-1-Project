@@ -8,7 +8,7 @@ network="--network host"
 volume="-v $vol:/hdfs-data"
 hostname="--hostname $host"
 name="--name $host"
-run="run $network $volume $hostname $name $img"
+run="run -d $network $volume $hostname $name $img"
 
 format_namenode="yes y | hdfs namenode -format"
 start_namenode="hdfs --daemon start namenode"
