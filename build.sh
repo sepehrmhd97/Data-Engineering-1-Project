@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo -e ">>> cp -r ~/.ssh ."
-cp -r ~/.ssh .
+echo -e ">>> cp -r /home/ubuntu/.ssh ."
+cp -r /home/ubuntu/.ssh .
 
 echo -e ">>> docker build -t hadooptest ."
 docker build -t hadooptest .
