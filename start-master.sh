@@ -12,9 +12,8 @@ run="run -d $network $volume $hostname $name $img"
 
 format_namenode="yes y | hdfs namenode -format"
 start_namenode="hdfs --daemon start namenode"
-jps="jps"
-sleep="sleep 999999d"
-command="$start_namenode && $jps && $sleep"
+start_spark_master="\$SPARK_HOME/sbin/start-master.sh"
+command="$start_namenode && $start_spark_master"
 
 while getopts "f" opt; do
   case $opt in
