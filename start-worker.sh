@@ -32,5 +32,5 @@ start_datanode="hdfs --daemon start datanode"
 start_spark_worker="\$SPARK_HOME/sbin/start-worker.sh spark://192.168.2.208:7077"
 command="$start_datanode && $start_spark_worker"
 
-echo -e ">>> docker -d $run sh -c \"$command\""
+echo -e ">>> docker $run sh -c \"$command\""
 docker $run sh -c "$command"
