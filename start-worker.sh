@@ -29,7 +29,7 @@ name="--name $host"
 run="run -d $network $volume $hostname $name $img"
 
 start_datanode="hdfs --daemon start datanode"
-start_spark_worker="\$SPARK_HOME/sbin/start-worker.sh spark://192.168.2.208:7077"
+start_spark_worker="\$SPARK_HOME/sbin/start-worker.sh spark://192.168.2.216:7077"
 command="$start_datanode && $start_spark_worker"
 
 echo -e ">>> docker $run sh -c \"$command\""
