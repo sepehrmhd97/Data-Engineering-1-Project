@@ -50,11 +50,3 @@ Before actually contextualize the Spark (and Hadoop) containers, make sure every
 6. The cluster should be up and running.
     
     The Spark UI and HDFS GUI should be runnin on master on port `8080` and `9870` respectively
-
-## Usage
-
-Run the visualizer
-```bash
-  python3 mapper_app.py
-```
-
