@@ -30,11 +30,11 @@ RUN apt-get install -y python3
 RUN apt-get install -y python3-pip
 RUN pip3 install pyspark==3.3.2
 
-COPY hadoop-configs/core-site.xml /hadoop-3.3.4/etc/hadoop/
-COPY hadoop-configs/hdfs-site.xml /hadoop-3.3.4/etc/hadoop/
-COPY hadoop-configs/workers /hadoop-3.3.4/etc/hadoop/
-COPY hadoop-configs/hadoop-env.sh /hadoop-3.3.4/etc/hadoop/
-COPY hadoop-configs/spark-env.sh $SPARK_HOME/conf
+COPY config/core-site.xml /hadoop-3.3.4/etc/hadoop/
+COPY config/hdfs-site.xml /hadoop-3.3.4/etc/hadoop/
+COPY config/workers /hadoop-3.3.4/etc/hadoop/
+COPY config/hadoop-env.sh /hadoop-3.3.4/etc/hadoop/
+COPY config/spark-env.sh $SPARK_HOME/conf
 COPY .ssh /root/.ssh
 
 EXPOSE 7077

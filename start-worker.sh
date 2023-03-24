@@ -19,7 +19,7 @@ if ! $has_host; then
   exit 1
 fi
 
-img="hadooptest"
+img="spark-image"
 vol="hdfs-volume"
 
 network="--network host"

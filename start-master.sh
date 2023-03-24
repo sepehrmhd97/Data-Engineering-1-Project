@@ -1,6 +1,6 @@
 #!/bin/bash
 
-img="hadooptest"
+img="spark-image"
 host="master-node"
 vol="hdfs-volume"
 
