@@ -13,8 +13,6 @@ ENV YARN_NODEMANAGER_USER="root"
 
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get install -y net-tools
-RUN apt-get install -y iputils-ping
 RUN apt-get install -y wget
 RUN apt-get install -y openjdk-11-jdk-headless
 RUN apt-get install -y openssh-client
