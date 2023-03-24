@@ -10,9 +10,9 @@ The relationship between the change in the number of reddit comments related to 
 To perform this analysis, Spark cluster is used. Moreover, for easy contextualization of nodes, Docker is used.
 
 ## Contextualize
-Before actually contextualize the Spark (and Hadoop) containers, make sure every machines are able to `ssh` to each other by configuring `/etc/hosts`, `~/.ssh/config`, and `~/.ssh/authorized_keys`. Additionally, Docker must be installed.
+Before actually contextualizing the Spark (and Hadoop) containers, make sure every machines are able to `ssh` to each other by configuring `/etc/hosts`, `~/.ssh/config`, and `~/.ssh/authorized_keys`. Additionally, Docker must be installed.
 
-1. Configure Spark and Hadoop by editing files inside `hadoop-configs` folder.
+1. Configure Spark and Hadoop by editing files inside `config` folder.
 
     - Specify the hostname or IP of spark master in `spark-env.sh` script.
     - Put the hostnames or IPs of workers in `workers` file.
