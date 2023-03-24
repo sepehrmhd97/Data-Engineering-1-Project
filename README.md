@@ -36,7 +36,7 @@ Before actually contextualize the Spark (and Hadoop) containers, make sure every
     Use the `-f` flag to format the namenode.
 
     ```bash
-    ./start-master.sh [-f]
+    $ ./start-master.sh [-f]
     ```
 
 5. Run the workers on multiple VMs.
@@ -44,7 +44,7 @@ Before actually contextualize the Spark (and Hadoop) containers, make sure every
     The `-h` flag must be provided. The value is the worker's hostname that's also present in `/etc/hosts` and `workers` files.
 
     ```bash
-    ./start-worker.sh -h [workers_hostname]
+    $ ./start-worker.sh -h [workers_hostname]
     ```
 
 6. The cluster should be up and running.
